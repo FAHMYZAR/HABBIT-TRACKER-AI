@@ -87,7 +87,9 @@ export const processUserMessage = async (
     `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-pro-preview",
+      // gemini-3-pro-preview sudah tidak tersedia (API 2026-10-19);
+      // gemini-flash-latest terverifikasi jalan dengan API key ini + thinkingBudget 16000.
+      model: "gemini-flash-latest",
       contents: message,
       config: {
         systemInstruction: systemPrompt,
